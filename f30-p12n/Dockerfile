@@ -1,14 +1,14 @@
 FROM registry.fedoraproject.org/fedora:30
 
-ENV NAME=fedora-toolbox VERSION=30
+ENV NAME=fedora-p12n-toolbox VERSION=30
 LABEL com.github.containers.toolbox="true" \
       com.github.debarshiray.toolbox="true" \
       com.redhat.component="$NAME" \
       name="$FGC/$NAME" \
       version="$VERSION" \
       usage="This image is meant to be used with the toolbox command" \
-      summary="Base image for creating Fedora toolbox containers" \
-      maintainer="Debarshi Ray <rishi@fedoraproject.org>"
+      summary="P12N image for Fedora toolbox containers" \
+      maintainer="Vincent Demeester <vdemeest@redhat.com>"
 
 RUN sed -i '/tsflags=nodocs/d' /etc/dnf/dnf.conf
 RUN dnf -y swap coreutils-single coreutils-full
